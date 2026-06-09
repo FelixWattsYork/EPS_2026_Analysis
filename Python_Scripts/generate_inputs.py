@@ -119,7 +119,9 @@ for tval, eq_file in file_info:
 
     plt.tight_layout()
     pfile = plot_dir / f"t{tval:+09.3f}_surfaces.pdf"
-    plt.savefig(pfile)
+    plt.savefig(pfile, bbox_inches='tight', pad_inches=0.05)
+    pfile = plot_dir / f"t{tval:+09.3f}_surfaces.png"
+    plt.savefig(pfile, bbox_inches='tight', pad_inches=0.05, dpi=150)
     plt.close()
 
     print(f"    → {len(psin_list)} inputs + {pfile}")
